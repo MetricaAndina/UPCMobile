@@ -13,31 +13,7 @@ namespace UPCMobile.SC
     public interface IUPCMobile
     {
         #region Implementados
-        [WebInvoke(Method = "GET",
-                   ResponseFormat = WebMessageFormat.Json,
-                   UriTemplate = "/Horario/?CodAlumno={sCodAlumno}&Token={sToken}")]
-        [OperationContract]
-        HorarioDiaCollectionDC HorarioDiaListar(String sCodAlumno, String sToken);
-
-        [WebInvoke(Method = "GET",
-                   ResponseFormat = WebMessageFormat.Json,
-                   UriTemplate = "/Inasistencia/?CodAlumno={sCodAlumno}&Token={sToken}")]
-        [OperationContract]
-        InasistenciaCollectionDC InasistenciaListar(String sCodAlumno, String sToken);
-
-        [WebInvoke(Method = "GET",
-                   ResponseFormat = WebMessageFormat.Json,
-                   UriTemplate = "/CursoAlumno/?CodAlumno={sCodAlumno}&Token={sToken}")]
-        [OperationContract]
-        CursoAlumnoCollectionDC CursoAlumnoListar(String sCodAlumno, String sToken);
-
-
-        [WebInvoke(Method = "GET",
-                   ResponseFormat = WebMessageFormat.Json,
-                   UriTemplate = "/Nota/?CodAlumno={sCodAlumno}&CodCurso={sCodCurso}&Token={sToken}")]
-        [OperationContract]
-        NotaCollectionDC NotaListar(String sCodAlumno, String sCodCurso, String sToken);
-
+       
 
         [WebInvoke(Method = "GET",
                    ResponseFormat = WebMessageFormat.Json,
@@ -55,6 +31,79 @@ namespace UPCMobile.SC
                    ResponseFormat = WebMessageFormat.Json,
                    UriTemplate = "/Logoff/?CodAlumno={sCodAlumno}&Token={sToken}")]
         AlumnoDC AlumnoLogoff(String sCodAlumno, String sToken);
+        #endregion
+
+        #region CSC-00263690-00
+
+        //***************************************************************************************************
+        //Ticket        :   CSC-00263690-00
+        //Responsable   :   Felix Miranda
+        //Fecha         :   01/09/2017
+        //Funcionalidad :   Web Service UPC Mobile > Excluir Páginas del compilado.
+        //--***************************************************************************************************
+
+
+        //[WebInvoke(Method = "GET",
+        //           ResponseFormat = WebMessageFormat.Json,
+        //           UriTemplate = "/Horario/?CodAlumno={sCodAlumno}&Token={sToken}")]
+        //[OperationContract]
+        //HorarioDiaCollectionDC HorarioDiaListar(String sCodAlumno, String sToken);
+
+        //[WebInvoke(Method = "GET",
+        //           ResponseFormat = WebMessageFormat.Json,
+        //           UriTemplate = "/Inasistencia/?CodAlumno={sCodAlumno}&Token={sToken}")]
+        //[OperationContract]
+        //InasistenciaCollectionDC InasistenciaListar(String sCodAlumno, String sToken);
+
+        //[WebInvoke(Method = "GET",
+        //           ResponseFormat = WebMessageFormat.Json,
+        //           UriTemplate = "/CursoAlumno/?CodAlumno={sCodAlumno}&Token={sToken}")]
+        //[OperationContract]
+        //CursoAlumnoCollectionDC CursoAlumnoListar(String sCodAlumno, String sToken);
+
+
+        //[WebInvoke(Method = "GET",
+        //           ResponseFormat = WebMessageFormat.Json,
+        //           UriTemplate = "/Nota/?CodAlumno={sCodAlumno}&CodCurso={sCodCurso}&Token={sToken}")]
+        //[OperationContract]
+        //NotaCollectionDC NotaListar(String sCodAlumno, String sCodCurso, String sToken);
+
+        /* Web Service que devuelve el listado de cursos que dicta el profesor en el ciclo actual */
+
+        //[OperationContract]
+        //[WebInvoke(Method = "GET",
+        //           ResponseFormat = WebMessageFormat.Json,
+        //           UriTemplate = "/ListadoCursosProfesor/?Codigo={sCodigo}&Token={sToken}")]
+        //ListadoCursosDC ListadoCursosProfesor(String sCodigo, String sToken);
+
+        ///* Web Service que devuelve el listado de alumnos matriculados en un curso determinado del profesor */
+        //[OperationContract]
+        //[WebInvoke(Method = "GET",
+        //           ResponseFormat = WebMessageFormat.Json,
+        //           UriTemplate = "/ListadoAlumnosProfesor/?Codigo={sCodigo}&Token={sToken}&Modalidad={sModal}&Periodo={sPeriodo}&Curso={sCurso}&Seccion={sSeccion}&Grupo={sGrupo}")]
+        //ListadoAlumnosCursoDC ListadoAlumnosProfesor(String sCodigo, String sToken, String sModal, String sPeriodo, String sCurso, String sSeccion, String sGrupo);
+
+        ///* Web Service que devuelve el horario actual del profesor */
+        //[OperationContract]
+        //[WebInvoke(Method = "GET",
+        //           ResponseFormat = WebMessageFormat.Json,
+        //           UriTemplate = "/HorarioProfesor/?Codigo={sCodigo}&Token={sToken}")]
+        //HorarioProfesorDC HorarioProfesor(String sCodigo, String sToken);
+
+        ///* Interfaz que permite que un profesor pueda consultar las notas de un alumno */
+        //[WebInvoke(Method = "GET",
+        //           ResponseFormat = WebMessageFormat.Json,
+        //           UriTemplate = "/NotaProfesor/?Codigo={sCodigo}&CodAlumno={sCodAlumno}&CodCurso={sCodCurso}&Token={sToken}")]
+        //[OperationContract]
+        //NotaCollectionDC NotaListarProfesor(String sCodigo, String sCodAlumno, String sCodCurso, String sToken);
+
+        ///* Interfaz que permite que un profesor pueda consultar las inasistencias de un alumno */
+        //[WebInvoke(Method = "GET",
+        //           ResponseFormat = WebMessageFormat.Json,
+        //           UriTemplate = "/InasistenciaProfesor/?Codigo={sCodigo}&CodAlumno={sCodAlumno}&Token={sToken}")]
+        //[OperationContract]
+        //InasistenciaCollectionDC InasistenciaListarProfesor(String sCodigo, String sCodAlumno, String sToken);
+
         #endregion
 
         #region SS-2013-072
@@ -94,27 +143,6 @@ namespace UPCMobile.SC
                    UriTemplate = "/ListadoHijos/?Codigo={sCodigo}&Token={sToken}")]
         ListadoHijosDC ListadoHijos(String sCodigo, String sToken);
 
-        /* Web Service que devuelve el listado de cursos que dicta el profesor en el ciclo actual */
-        [OperationContract]
-        [WebInvoke(Method = "GET",
-                   ResponseFormat = WebMessageFormat.Json,
-                   UriTemplate = "/ListadoCursosProfesor/?Codigo={sCodigo}&Token={sToken}")]
-        ListadoCursosDC ListadoCursosProfesor(String sCodigo, String sToken);
-
-        /* Web Service que devuelve el listado de alumnos matriculados en un curso determinado del profesor */
-        [OperationContract]
-        [WebInvoke(Method = "GET",
-                   ResponseFormat = WebMessageFormat.Json,
-                   UriTemplate = "/ListadoAlumnosProfesor/?Codigo={sCodigo}&Token={sToken}&Modalidad={sModal}&Periodo={sPeriodo}&Curso={sCurso}&Seccion={sSeccion}&Grupo={sGrupo}")]
-        ListadoAlumnosCursoDC ListadoAlumnosProfesor(String sCodigo, String sToken, String sModal, String sPeriodo, String sCurso, String sSeccion, String sGrupo);
-
-        /* Web Service que devuelve el horario actual del profesor */
-        [OperationContract]
-        [WebInvoke(Method = "GET",
-                   ResponseFormat = WebMessageFormat.Json,
-                   UriTemplate = "/HorarioProfesor/?Codigo={sCodigo}&Token={sToken}")]
-        HorarioProfesorDC HorarioProfesor(String sCodigo, String sToken);
-
         /* Web service que provee una nueva version del login (Metodo GET) para habilitar permisos a padres de familia y docentes */
         [OperationContract]
         [WebInvoke(Method = "GET",
@@ -129,19 +157,7 @@ namespace UPCMobile.SC
                    UriTemplate = "/AutenticarP2")]
         UsuarioDC UsuarioAutenticarPost(Aut sAut);
         
-        /* Interfaz que permite que un profesor pueda consultar las notas de un alumno */
-        [WebInvoke(Method = "GET",
-                   ResponseFormat = WebMessageFormat.Json,
-                   UriTemplate = "/NotaProfesor/?Codigo={sCodigo}&CodAlumno={sCodAlumno}&CodCurso={sCodCurso}&Token={sToken}")]
-        [OperationContract] 
-        NotaCollectionDC NotaListarProfesor(String sCodigo, String sCodAlumno, String sCodCurso, String sToken);
-
-        /* Interfaz que permite que un profesor pueda consultar las inasistencias de un alumno */
-        [WebInvoke(Method = "GET",
-                   ResponseFormat = WebMessageFormat.Json,
-                   UriTemplate = "/InasistenciaProfesor/?Codigo={sCodigo}&CodAlumno={sCodAlumno}&Token={sToken}")]
-        [OperationContract]
-        InasistenciaCollectionDC InasistenciaListarProfesor(String sCodigo, String sCodAlumno, String sToken);
+      
 
         /* Interfaz que permite que un padre de familia pueda ver el horario de clase de su hijo */
         [WebInvoke(Method = "GET",

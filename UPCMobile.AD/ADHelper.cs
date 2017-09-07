@@ -345,6 +345,8 @@ namespace UPCMobile.AD
             return validateUserResult;
 
         }
+
+       
         private bool ActiveDirectoryFindUser(string filter, DirectoryEntry searchRoot, out DirectoryEntry deUser)
         {
             bool retorno = false;

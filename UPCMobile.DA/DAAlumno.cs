@@ -39,6 +39,7 @@ namespace UPCMobile.DA
 
         private DC.AlumnoDC getAlumno(string sCodAlumno)
         {
+            
             DC.AlumnoDC objAlumnoDC;
             string mensaje = "";
             using (OracleConnection conn = new OracleConnection(DAConexion.getConexion()))

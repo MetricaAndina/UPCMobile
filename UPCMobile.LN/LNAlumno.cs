@@ -27,7 +27,6 @@ namespace UPCMobile.LN
 
 
         #region Metodos
-
         private int AutenticarUsuario(string usuario, string password) { 
 
             //if (retorna == ValidateUserResult.Result.OK)
@@ -250,7 +249,6 @@ namespace UPCMobile.LN
             try
             {
                 resultado = this.AutenticarUsuario(sCodigo, sContrasena);
-
                 if (resultado == 0)
                 {
                     objUsuario = new DC.UsuarioDC();

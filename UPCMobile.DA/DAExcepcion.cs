@@ -7,6 +7,7 @@ using Oracle.DataAccess.Client;
 using Oracle.DataAccess.Types;
 using System.Data;
 using DC = UPCMobile.DC;
+
 namespace UPCMobile.DA
 {
     public class DAExcepcion
@@ -25,7 +26,6 @@ namespace UPCMobile.DA
         #endregion
 
         #region metodos
-
 
 
         public void RegistrarExcepcion(   int flag,
@@ -79,6 +79,7 @@ namespace UPCMobile.DA
         }
         #endregion
 
+        
 
         #region internal
         #endregion

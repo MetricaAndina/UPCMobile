@@ -8,15 +8,22 @@ using PR=DataProtector;
 namespace UPCMobile.DA
 {
     public class DAConexion
-    {  
-        public static string getConexion(){
-            PR.DataProtector dp = new PR.DataProtector(PR.DataProtector.Store.USE_MACHINE_STORE);
-            string strConexionEncrypt = ConfigurationManager.AppSettings["connectionString"];//VERIFICAR PROD
-            //string strConexionEncrypt = ConfigurationManager.AppSettings["connectionStringUPCMovil"];//DESO
-            //string strConexionEncrypt = ConfigurationManager.AppSettings["connectionStringUPCInfo"];//DESI
+    {
+         public static string getConexion(){
+        
+                
+                PR.DataProtector dp = new PR.DataProtector(PR.DataProtector.Store.USE_MACHINE_STORE);
+                string strConexionEncrypt = ConfigurationManager.AppSettings["connectionString_Mobile"];//VERIFICAR PROD
+                //string strConexionEncrypt = ConfigurationManager.AppSettings["connectionStringUPCMovil"];//DESO
+                //string strConexionEncrypt = ConfigurationManager.AppSettings["connectionStringUPCInfo"];//DESI
 
-            byte[] strToDecrypt = Convert.FromBase64String(strConexionEncrypt);
-            string cnn = Encoding.ASCII.GetString(dp.Decrypt(strToDecrypt, null));
+                //Data Source=dese2;User Id=master;password=s1mps0n
+
+                byte[] strToDecrypt = Convert.FromBase64String(strConexionEncrypt);
+                string cnn = Encoding.ASCII.GetString(dp.Decrypt(strToDecrypt, null));
+                //cnn = "Data Source=deso;User Id=master;password=OCSE7tra";
+           
+            
 
             //return "user id=MASTER;password=ocse7tra;data source=DESO"; //DESI*/
             //return "Data source=(DESCRIPTION =(ADDRESS_LIST = (ADDRESS = (COMMUNITY = tcp.world)(PROTOCOL = TCP)(Host = 10.10.2.191)(Port = 1521)) (ADDRESS = (COMMUNITY = tcp.world)(PROTOCOL = TCP)(Host = 10.10.2.191)(Port = 1526)))(CONNECT_DATA = (SID = dese2)));User Id=master;Password=s1mps0n;";

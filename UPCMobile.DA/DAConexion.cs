@@ -13,6 +13,7 @@ namespace UPCMobile.DA
         
                 
                 PR.DataProtector dp = new PR.DataProtector(PR.DataProtector.Store.USE_MACHINE_STORE);
+                //string strConexionEncrypt = ConfigurationManager.AppSettings["connectionString"];//VERIFICAR PROD
                 string strConexionEncrypt = ConfigurationManager.AppSettings["connectionString_Mobile"];//VERIFICAR PROD
                 //string strConexionEncrypt = ConfigurationManager.AppSettings["connectionStringUPCMovil"];//DESO
                 //string strConexionEncrypt = ConfigurationManager.AppSettings["connectionStringUPCInfo"];//DESI
